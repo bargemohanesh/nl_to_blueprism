@@ -1,0 +1,4 @@
+{
+    "process_description": "Process Name: helix DLP Whitelisting Search. Steps: 1) Search Helix for work orders with support Category: DLP Whitelisting for EU-IC-CS - Endpoint Security. 2) If no WO numbers found, end process. 3) If WO found, return list of Work Order IDs and Request IDs. System Used: Helix ITSM (REST API).",
+    "include_xml": true
+}
