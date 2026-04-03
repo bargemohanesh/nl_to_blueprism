@@ -106,8 +106,9 @@ HTML_PAGE = r"""
 
     function downloadXml() {
       const xml = document.getElementById("xml").textContent || "";
-      downloadText(`${lastProcessName}.xml`, xml);
+      downloadText(`${lastProcessName}.bpprocess`, xml);  // change .xml to .bpprocess
     }
+    
   </script>
 </body>
 </html>

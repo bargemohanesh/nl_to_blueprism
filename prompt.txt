@@ -106,9 +106,23 @@ Exception Handling:
 - Description: <brief description or “None”>
 
 XML skeleton:
-<process name="...">
-  <stage name="..." type="...">
-    <next>...</next>
-  </stage>
-  ...
-</process>
+Generate Blue Prism v7.5 compatible XML saved as .bpprocess file.
+
+MANDATORY XML RULES:
+- Process opening tag: <process name="..." version="1.0" bpversion="7.5.0.17125" cpeversion="10.0.110.0" narrative="" byrefcollection="true" processrunningmessage="" disableversioning="false" preferredid="p01">
+- Always include after process tag:
+  <view><camerax>0</camerax><cameray>0</cameray><zoom version="2">1</zoom></view>
+  <preconditions/>
+  <endpoint narrative=""/>
+- Use simple short IDs for stageids in format: s01, s02, s03, s04... (e.g. stageid="s01")
+- Every stage MUST have <display x="15" y="..."/> with y starting at -105, incrementing by 90
+- Navigation: <onsuccess> for linear stages, <ontrue>/<onfalse> for Decision — all referencing stageids
+- Start and End stages have ONLY <display> tag — nothing else
+- Do NOT include <subsheetid>, <loginhibit/>, <subsheet>, <appdef/>, <?xml?> declaration
+- Stages are direct children of <process>
+- End stage has NO <onsuccess>
+- XML skeleton must include ONLY stageid, display, and navigation tags (onsuccess/ontrue/onfalse)
+- Do NOT include inputs, outputs, narrative, resource, or calculation tags in XML skeleton
+- Keep XML minimal — structural skeleton only
+- Do NOT use LoopStart type — use type="Action" instead
+

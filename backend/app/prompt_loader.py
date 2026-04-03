@@ -39,6 +39,8 @@ STRICT OUTPUT CONTRACT (MUST FOLLOW):
 - Use the exact lables: Process Name, Process Purspose, System used, Main Stages, Data Items, Exception Handling, XML skeleton.
 - XML skeleton MUST be in a fenced code block starting with ```xml and ending with ```(so it can be parsed).
 - If information is missing, write N/A but keep the keys.
+- In XML skeleton, stageids MUST be short IDs like s01, s02, s03 — NOT full UUIDs
+- preferredid in process tag MUST be p01 — NOT a full UUID
 
 NOW CONVERT THIS PROCESS (Natural Language):
 {user_process_description}

@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: nl-to-blueprism
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    rootDir: backend
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: MODEL
+        value: claude-sonnet-4-5-20250929
+      - key: MAX_TOKEN
+        value: 8000
+      - key: TEMPERATURE
+        value: 0

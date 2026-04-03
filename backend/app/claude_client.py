@@ -6,7 +6,7 @@ from anthropic import Anthropic
 load_dotenv()
 
 DEFAULT_MODEL = os.getenv("MODEL","claude-sonnet-4-5-20250929")
-DEFAULT_MAX_TOKENS = int(os.getenv("MAX_TOKEN", "2000"))
+DEFAULT_MAX_TOKENS = int(os.getenv("MAX_TOKEN", "16000"))
 DEFAULT_TEMPERATURE = float(os.getenv("TEMPERATURE", "0"))
 
 def call_claude(prompt:str) -> str:
